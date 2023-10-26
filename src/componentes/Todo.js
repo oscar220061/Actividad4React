@@ -17,7 +17,7 @@ const Todo = () =>{
     }
 
     function addList() {
-        addTodos([...todos,{id: todos.length + 1, name: value, isCompleted: value}]);
+        addTodos([...todos,{id: todos.length + 1, name: value, isCompleted: false}]);
     }
 
     return (

@@ -1,4 +1,6 @@
 const ListTodo = ({Todos, setTodos}) => {
+const estilo1 ={backgroundColor: "red"}
+const estilo2 ={backgroundColor: "green"}
     return (
         <div>
           <ul>
@@ -11,22 +13,23 @@ const ListTodo = ({Todos, setTodos}) => {
                 setTodos([...Todos])
               }}>
               Eliminar</button>
-
+              
               <button onClick={() => {
-                let indice = Todos.indexOf(todo);
+                let indice = Todos.indexOf(todo); 
                 
                 console.log(indice)
                 const UpdateTodos = Todos.map((todo) => {
-                  
-                  if(true){
-                    return({...todo, isCompleted:true});
+                  if(todo.id===indice+1){
+                    return{...todo, isCompleted:true};
                   }
-                    
-                  
+                  return todo;
                 }
                 );
+                setTodos(UpdateTodos)
                 console.log(UpdateTodos);
               }}>Actualizar</button>
+              
+              {todo.isCompleted ? <span style={estilo1}> Hecho </span> : <span style={estilo1}> Pendiente </span>}
           </li>
       )}
         </ul>
