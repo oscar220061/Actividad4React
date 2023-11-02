@@ -1,36 +1,27 @@
 import { useState } from "react";
 import InputEmail from "./InputEmail";
 
- 
+function Email(){
 
-
-const Email = () =>{
-    
     const[email, setEmail] = useState("");
-    const[isValid, setIsValid] = useState();
+    const [mensaje, setMensaje] = useState("");
 
     function saveEmail(event){
         setEmail(event.target.value);
     }
     const chekEmail = () => {
         if(email.includes("@")){
-            setIsValid(true);
+            setMensaje("El email es válido");    
         }else{
-            setIsValid(false);
+            setMensaje("El email es inválido");
         }
     }
         
-   
     return(
         <div>
-            <form>
-                <h2>Your Email</h2><br/>
-                <InputEmail ChangeInput = {saveEmail} Value={email} />
-                <button onClick={chekEmail}>Submit</button>
-                <p>{isValid ? <p>El email es válido</p> : <p>El email es inválido</p>}</p>
-            </form>
-            
-
+            <h2>Your Email</h2><br/>
+            <InputEmail ChangeInput = {saveEmail} Value={email} ClickButton={chekEmail}/>
+            <p>{mensaje}</p>   
         </div>
     )
 }

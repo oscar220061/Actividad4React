@@ -9,7 +9,7 @@ const estilo2 ={backgroundColor: "green"}
               {todo.name}
               <button onClick={() => {
                 let index = Todos.indexOf(todo)
-                Todos.splice(index, 1) //At position index, remove n=1 items
+                Todos.splice(index, 1) 
                 setTodos([...Todos])
               }}>
               Eliminar</button>
@@ -29,7 +29,7 @@ const estilo2 ={backgroundColor: "green"}
                 console.log(UpdateTodos);
               }}>Actualizar</button>
               
-              {todo.isCompleted ? <span style={estilo1}> Hecho </span> : <span style={estilo1}> Pendiente </span>}
+              {todo.isCompleted ? <span style={estilo2}> Hecho </span> : <span style={estilo1}> Pendiente </span>}
           </li>
       )}
         </ul>

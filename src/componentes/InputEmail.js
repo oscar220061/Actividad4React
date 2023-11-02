@@ -1,9 +1,10 @@
 const InputEmail = (props) => {
 
     return(
-        <form>
-            <input type="text" onChange={props.ChangeInput}  value = {props.Value}/>
-        </form>
+        <div>
+            <input type="text" onChange={props.ChangeInput}  value = {props.Value}/><br/>
+            <button onClick={props.ClickButton}>Submit</button>
+        </div>
     )
 }
 
